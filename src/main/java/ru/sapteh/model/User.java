@@ -10,15 +10,15 @@ import javax.persistence.*;
 @RequiredArgsConstructor
 @ToString
 @Entity
-@Table(name="user_data")
+@Table(name="user_data", schema ="user_db")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private int id;
 
+    @Column(name= "first_name")
     @NonNull
-    @Column(name= "first_name",nullable = false)
     private String firstName;
 
     @NonNull
@@ -28,4 +28,5 @@ public class User {
     @NonNull
     @Column(name= "age",nullable = false)
     private int age;
+
 }

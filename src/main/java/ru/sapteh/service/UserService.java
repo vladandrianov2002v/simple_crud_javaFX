@@ -22,15 +22,15 @@ public class UserService {
         return userDao.findAll();
     }
 
-    public void save(User user) {
-        userDao.save(user);
+    public boolean save(User user) {
+        return userDao.save(user);
     }
 
-    public void update(User user) {
-        userDao.save(user);
+    public boolean update(User user) {
+        return userDao.save(user);
     }
 
-    public void delete(User user) {
-        userDao.save(user);
+    public boolean delete(User user) {
+       return userDao.save(user);
     }
 }

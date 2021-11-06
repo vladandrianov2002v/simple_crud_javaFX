@@ -22,6 +22,7 @@
       <TextField fx:id="lastNameText" layoutX="192.0" layoutY="109.0" />
       <TextField fx:id="ageText" layoutX="192.0" layoutY="173.0" />
       <Button layoutX="472.0" layoutY="302.0" mnemonicParsing="false" onAction="#addedButton" text="Add" />
+      <Button layoutX="263" layoutY="318" mnemonicParsing="false" onAction="#inputButton" text="Войти"/>
       <Button layoutX="40.0" layoutY="302.0" mnemonicParsing="false" onAction="#exitButton" text="Esc" />
       <Label fx:id="alertText" layoutX="279.0" layoutY="245.0">
          <font>

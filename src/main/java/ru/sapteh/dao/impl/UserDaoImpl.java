@@ -9,50 +9,58 @@ import ru.sapteh.model.User;
 import javax.persistence.Id;
 import java.util.List;
 
-public class UserDaoImpl  implements Dao<User,Integer> {
+public class UserDaoImpl implements Dao<User, Integer> {
 
     private final SessionFactory factory;
-    public UserDaoImpl(SessionFactory factory){
-        this.factory=factory;
+
+    public UserDaoImpl(SessionFactory factory) {
+        this.factory = factory;
     }
 
     @Override
-    public User findById(Integer id){
-        try(Session session = factory.openSession()){
-            return session.get(User.class,id);
+    public User findById(Integer id) {
+        try (Session session = factory.openSession()) {
+            return session.get(User.class, id);
         }
     }
 
     @Override
     public List<User> findAll() {
-        try(Session session = factory.openSession()) {
+        try (Session session = factory.openSession()) {
             return session.createQuery("from User", User.class).list();
         }
     }
+
     @Override
-    public void save(User user) {
-        try(Session session = factory.openSession()) {
+    public boolean save(User user) {
+        if (user == null) return false;
+        try (Session session = factory.openSession()) {
             final Transaction transaction = session.beginTransaction();
             session.save(user);
             transaction.commit();
         }
+        return true;
     }
 
     @Override
-    public void update(User user) {
-        try(Session session = factory.openSession()) {
+    public boolean update(User user) {
+        if (user == null) return false;
+        try (Session session = factory.openSession()) {
             final Transaction transaction = session.beginTransaction();
             session.update(user);
             transaction.commit();
         }
+        return false;
     }
 
     @Override
-    public void delete(User user) {
-        try(Session session = factory.openSession()) {
+    public boolean delete(User user) {
+        if (user == null) return false;
+        try (Session session = factory.openSession()) {
             final Transaction transaction = session.beginTransaction();
             session.delete(user);
             transaction.commit();
         }
+        return true;
     }
 }

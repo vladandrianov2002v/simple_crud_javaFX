@@ -27,10 +27,10 @@ public class UserService {
     }
 
     public boolean update(User user) {
-        return userDao.save(user);
+        return userDao.update(user);
     }
 
     public boolean delete(User user) {
-       return userDao.save(user);
+       return userDao.delete(user);
     }
 }

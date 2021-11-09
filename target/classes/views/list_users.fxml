@@ -20,7 +20,9 @@
                 <TableColumn fx:id="ageColumn" prefWidth="93.0" text="Age"/>
             </columns>
         </TableView>
-
+        <TextField fx:id="searchTxt" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="185.0"/>
+        <Label layoutX="20.0" layoutY="569.0" text="Количество"/>
+        <Label fx:id="countLbl" layoutX="107.0" layoutY="569.0" text="Label"/>
         <Separator layoutX="410.0" layoutY="5.0" orientation="VERTICAL" prefHeight="391.0" prefWidth="8.0"/>
         <Label layoutX="566.0" layoutY="13.0" text="User info">
             <font>
@@ -68,17 +70,17 @@
                 <Font size="18.0"/>
             </font>
         </TextField>
-        <Button layoutX="447.0" layoutY="348.0" mnemonicParsing="false" onAction="#buttonSave" text="Добавить">
+        <Button layoutX="447.0" layoutY="348.0" mnemonicParsing="false" onAction="#saveUserButton" text="Добавить">
             <font>
                 <Font size="15.0"/>
             </font>
         </Button>
-        <Button layoutX="574.0" layoutY="348.0" mnemonicParsing="false" onAction="#buttonDelete" text="Удалить">
+        <Button layoutX="574.0" layoutY="348.0" mnemonicParsing="false" onAction="#deleteUserButton" text="Удалить">
             <font>
                 <Font size="15.0"/>
             </font>
         </Button>
-        <Button layoutX="687.0" layoutY="348.0" mnemonicParsing="false" onAction="#buttonUpdate" text="Обновить">
+        <Button layoutX="687.0" layoutY="348.0" mnemonicParsing="false" onAction="#updateUserButton" text="Обновить">
             <font>
                 <Font size="15.0"/>
             </font>

@@ -31,6 +31,6 @@ public class UserService {
     }
 
     public boolean delete(User user) {
-       return userDao.delete(user);
+        return userDao.delete(user);
     }
 }
